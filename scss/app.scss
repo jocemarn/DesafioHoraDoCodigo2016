@@ -1,0 +1,250 @@
+@charset 'utf-8';
+
+@import 'settings';
+@import 'foundation';
+@import 'motion-ui';
+
+@include foundation-global-styles;
+@include foundation-grid;
+// @include foundation-flex-grid;
+@include foundation-typography;
+@include foundation-button;
+@include foundation-forms;
+// @include foundation-range-input;
+@include foundation-accordion;
+@include foundation-accordion-menu;
+@include foundation-badge;
+@include foundation-breadcrumbs;
+@include foundation-button-group;
+@include foundation-callout;
+@include foundation-close-button;
+@include foundation-menu;
+@include foundation-menu-icon;
+@include foundation-drilldown-menu;
+@include foundation-dropdown;
+@include foundation-dropdown-menu;
+@include foundation-flex-video;
+@include foundation-label;
+@include foundation-media-object;
+@include foundation-off-canvas;
+@include foundation-orbit;
+@include foundation-pagination;
+@include foundation-progress-bar;
+// @include foundation-progress-element;
+// @include foundation-meter-element;
+@include foundation-slider;
+@include foundation-sticky;
+@include foundation-reveal;
+@include foundation-switch;
+@include foundation-table;
+@include foundation-tabs;
+@include foundation-thumbnail;
+@include foundation-title-bar;
+@include foundation-tooltip;
+@include foundation-top-bar;
+@include foundation-visibility-classes;
+@include foundation-float-classes;
+// @include foundation-flex-classes;
+
+@include motion-ui-transitions;
+@include motion-ui-animations;
+
+$blue_one : #a3d2ee;
+$blue_two : #041f3a;
+$blue_three : #143351;
+
+a{
+  transition: all 0.3s !important;
+}
+
+.bg-colorOne{
+  background: $blue_one;
+}
+
+.bg-colorTwo{
+  background: $blue_two;
+}
+
+.bg-colorThree{
+  background: $blue_three;
+  color: $blue_one !important;
+}
+
+.textCenter{
+  text-align: center;
+}
+
+body{
+  padding-top: 80px;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+}
+
+header{
+  #fixed{
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    @include breakpoint(small only){
+      box-shadow: 0 0 15px 0 rgba(255,255,255,0.3);
+      background: url('../img/bg.jpg');
+    }
+    @include breakpoint(medium only){
+      box-shadow: 0 0 15px 0 rgba(255,255,255,0.3);
+      background: url('../img/bg.jpg');
+    }
+  }
+  img{
+    @include breakpoint(large){
+      max-height: 70px;
+    }
+    margin: 5px 0;
+  }
+  nav{
+    color: $blue_one;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: bold;
+    @include breakpoint(medium){
+      padding: 25px 0;
+    }
+    a{
+      color: $blue_one;
+      text-transform: uppercase;
+      padding: 10px;
+      border-radius: 10px;
+      @include breakpoint(small only){
+        width: 100% !important;
+        display: inline-block;
+        text-align: center;
+      }
+    }
+    a:hover{
+      color: rgba($blue_one, 0.6);
+    }
+    a.linkInscricao{
+      background: $blue_one;
+      color: $blue_two;
+      @include breakpoint(small only){
+        margin-bottom: 1.2rem;
+      }
+    }
+    a.linkInscricao:hover{
+      color: rgba($blue_two, 0.6);
+    }
+    #menuTrigger{
+      font-size: 2rem;
+    }
+  }
+  #logoSmall{
+    text-align: center;
+    img{
+      width: 50%;
+    }
+  }
+}
+
+header .fundoFixo{
+  box-shadow: 0 0 15px 0 rgba(255,255,255,0.3);
+  background: url('../img/bg.jpg');
+}
+
+section:not(#organizacaoEApoio){
+  width: 100%;
+  min-height: 100vh;
+  margin-top: 40px;
+  h3{
+    color: #fff;
+    font-size: 2.5rem;
+  }
+  .retanguloRounded{
+    width: 100%;
+    min-height: 200px;
+    border-radius: 20px;
+    padding: 20px 40px;
+    font-size: 1.2rem;
+    color: $blue_two;
+    a{
+      color: rgba($blue_two,.8);
+      font-weight: bold;
+    }
+    a:hover{
+      color: rgba($blue_two,.6);
+    }
+  }
+  h4{
+    font-size: 2rem;
+  }
+  #datasPrazos{
+    td{
+      border: 1px solid #000;
+      width: 50% !important;
+    }
+    thead td{
+      text-align: center;
+    }
+  }
+}
+
+section#organizacaoEApoio{
+  width: 100%;
+  background: #fff;
+  padding: 10px 0;
+  h3{
+    color: $blue_two;
+  }
+  #apoio{
+    padding-top: 3rem;
+    img{
+      max-height: 80px;
+    }
+    div{
+      text-align: center;
+    }
+  }
+}
+
+#inicio{
+  #video{
+    text-align: center;
+    iframe{
+      @media screen and (max-width: 881px){
+        width: 100%;
+        height: 56.25vw;
+      }
+      @media screen and (min-width: 882px){
+        width: 853px;
+        height: 480px;
+      }
+    }
+  }
+}
+
+#premiacao{
+  small{
+
+  }
+}
+
+.reveal{
+  h3,h4{
+    color: $blue_two;
+  }
+}
+
+footer{
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  a{
+    font-weight: bold;
+    color: #fff;
+  }
+}

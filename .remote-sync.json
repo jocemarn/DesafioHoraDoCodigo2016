@@ -1,0 +1,14 @@
+{
+  "uploadOnSave": true,
+  "useAtomicWrites": false,
+  "deleteLocal": false,
+  "hostname": "10.1.2.30",
+  "target": "/var/www/html/hdc/",
+  "ignore": [
+    ".remote-sync.json",
+    ".git/**"
+  ],
+  "username": "acessoFTP",
+  "password": "Fundetec1234*",
+  "transport": "scp"
+}
