@@ -103,6 +103,9 @@ header{
     @include breakpoint(large){
       max-height: 70px;
     }
+    @include breakpoint(large){
+      max-height: 70px;
+    }
     margin: 5px 0;
   }
   nav{
@@ -145,7 +148,12 @@ header{
   #logoSmall{
     text-align: center;
     img{
-      width: 50%;
+      @include breakpoint(medium){
+        width: 50%;
+      }
+      @include breakpoint(small only){
+        width: 90%;
+      }
     }
   }
 }
