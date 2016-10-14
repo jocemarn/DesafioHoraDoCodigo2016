@@ -19,7 +19,7 @@
     <meta property="og:image" content=""/>
     <meta itemprop="image" content=""/>
 
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">
+    <!--<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">-->
     <link rel="stylesheet" href="css/app.css">
   </head>
   <body>
@@ -34,7 +34,6 @@
               <a class="hide-for-medium" id="menuTrigger">Menu</a>
               <a href="#inicio" id="menuInicio" class="show-for-medium itemMenu goTo">Início</a><span class="show-for-medium"> • </span>
               <a href="#comoParticipar" class="show-for-medium itemMenu goTo">Como Participar</a><span class="show-for-medium"> • </span>
-              <a data-open="regras" class="show-for-medium itemMenu">Regras</a><span class="show-for-medium"> • </span>
               <a href="#premiacao" class="show-for-medium itemMenu goTo">Premiação</a><span class="show-for-medium"> • </span>
               <a data-open="contato" class="show-for-medium itemMenu">Contato</a><span class="show-for-medium"> • </span>
               <a data-open="inscreva" class="linkInscricao show-for-medium itemMenu">Inscreva-se</a>
@@ -52,7 +51,7 @@
     <section id="inicio">
       <div class="row">
         <div class="medium-48 column">
-          <div id="video"><iframe src="https://www.youtube.com/embed/diJ2Rrt4yXw" frameborder="0" allowfullscreen></iframe></div>
+          <!--<div id="video"><iframe src="https://www.youtube.com/embed/diJ2Rrt4yXw" frameborder="0" allowfullscreen></iframe></div>-->
           <div class="retanguloRounded bg-colorOne">
             <p>Saber programar é uma habilidade importante em um mundo digital. Hoje em dia não basta saber usar computadores, criar textos, planilhas, usar internet. As crianças também devem saber como as coisas funcionam. Aprender a programar não é útil apenas se você quiser ser um programador no futuro. Programar ajuda em outras habilidades, como resolver problemas, desenvolver o raciocínio lógico e contribui em outras matérias como ciências e matemática. Além disso, programar é muito divertido.</p>
             <p>A Fundação para o Desenvolvimento Científico e Tecnológico de Cascavel e Região (<strong>FUNDETEC</strong>), a Fundação Lemann, Fundação Telefônica e a Secretaria de Estado da Educação do Paraná, dentro de suas atribuições, em uma iniciativa para a popularização e difusão da ciência e tecnologia junto a professores, crianças e jovens, utilizada em praticamente todo o mundo, traz para o Estado do Paraná o Desafio da Hora do Código.</p>
@@ -91,6 +90,7 @@
                   <li>Cadastrar sua escola no site: <a href="http://horadocodigo.fundetec.org.br" target="_blank">horadocodigo.fundetec.org.br</a>;</li>
                   <li>Enviar o relatório de atividades de cada turma em formato PDF para o e-mail: <a href="mailto:desafiohoc@fundetec.org.br">desafiohoc@fundetec.org.br</a>.</li>
                 </ol>
+                <p>Confira mais informações <a href="pdf/regulamento.pdf">baixando o regulamento do desafio</a>.</p>
 
                 <h5>Datas e Prazos:</h5>
                 <table id="datasPrazos">
@@ -152,8 +152,21 @@
           <div class="row">
             <div class="medium-48 column">
               <div class="retanguloRounded bg-colorOne textCenter">
-                <h4>EM BREVE</h4>
-                <p>A lista de prêmios <b>está em codificação</b>, e em breve será colocada em produção! <b>Aguardem!</b></p>
+                <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in;">
+                  <ul class="orbit-container">
+                    <button class="orbit-previous"><span class="show-for-sr">Anterior</span>&#9664;&#xFE0E;</button>
+                    <button class="orbit-next"><span class="show-for-sr">Próximo</span>&#9654;&#xFE0E;</button>
+                    <li class="is-active orbit-slide">
+                      <img src="img/premios/3dcloner_lab.png" width="100%" title="Impressoras 3D - 3DCloner Lab - Com suporte a CNC">
+                    </li>
+                    <li class="is-active orbit-slide">
+                      <img src="img/premios/atto.png" width="100%" title="Kits de Robótica Educativa - Atto Educacional KTR-30">
+                    </li>
+                    <li class="is-active orbit-slide">
+                      <img src="img/premios/GBK.png" width="100%" title="Kits de Componentes para Automação e Robótica - GBK Robotics">
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -193,6 +206,21 @@
               </a>
             </div>
             <div class="medium-9 float-left columns">
+              <a href="http://www.fundacaotelefonica.org.br/" target="_blank" title="Fundação Telefônica | Vivo">
+                <img src="img/apoio/telefonica.svg"  alt="Fundação Telefônica | Vivo">
+              </a>
+            </div>
+            <div class="medium-9 float-left columns">
+              <a href="http://etechbrasil.com.br/" target="_blank" title="e.tech Brasil">
+                <img src="img/apoio/etech.svg"  alt="e.tech Brasil">
+              </a>
+            </div>
+            <div class="medium-9 float-left columns">
+              <a href="http://www.3dcloner.com.br/" target="_blank" title="3DCloner">
+                <img src="img/apoio/3dcloner.svg"  alt="3DCloner">
+              </a>
+            </div>
+            <div class="medium-9 float-left columns">
               <a href="http://www.gbkrobotics.com.br" target="_blank" title="GBK Robotics">
                 <img src="img/apoio/gbk.svg"  alt="GBK Robotics">
               </a>
@@ -202,19 +230,15 @@
                 <img src="img/apoio/atto.svg"  alt="Atto Educacional">
               </a>
             </div>
+            <div class="medium-9 float-left columns">
+              <a href="http://centromaker.com/" target="_blank" title="Centro Maker">
+                <img src="img/apoio/cm.svg"  alt="Centro Maker">
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </section>
-
-      <div class="reveal" id="regras" data-reveal>
-        <h1>/* REGRAS */</h1>
-        <p class="lead">Your couch. It is mine.</p>
-        <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
-        <button class="close-button" data-close aria-label="Close modal" type="button">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
 
       <div class="reveal" id="contato" data-reveal>
         <h1>/* CONTATO */</h1>
