@@ -175,7 +175,15 @@ section:not(#organizacaoEApoio){
     width: 100%;
     min-height: 200px;
     border-radius: 20px;
-    padding: 20px 40px;
+    @include breakpoint(medium){
+      padding: 20px 40px;
+    }
+    @include breakpoint(small only){
+      padding: 20px 10px;
+      a{
+        font-size: 1.05rem;
+      }
+    }
     font-size: 1.2rem;
     color: $blue_two;
     a{
@@ -206,6 +214,15 @@ section#organizacaoEApoio{
   padding: 10px 0;
   h3{
     color: $blue_two;
+    @include breakpoint(small only){
+      text-align: center;
+      font-size: 2rem;
+    }
+  }
+  @include breakpoint(small only){
+    #organizacao{
+      text-align: center;
+    }
   }
   #apoio{
     padding-top: 3rem;
