@@ -267,32 +267,46 @@
       <div class="reveal" id="inscreva" data-reveal>
         <div class="row">
           <div class="medium-48">
+            <div class="callout warning">
+              <h5>Ooopa! As inscrições para o Desafio da Hora do Código estarão abertas a partir de 01/11/2016 até 11/11/2016!</h5>
+              <p>Mas lembre-se para participar do Desafio da Hora do Código você deve:</p>
+              <ol>
+                <li>Participar do Curso de Formação para Professores do site: www.programae.org.br/educador;</li>
+                <li>Inscrever-se como Professor na plataforma da Hora do Código;</li>
+                <li>Criar suas turmas na plataforma, inscrever seus alunos;</li>
+                <li>Realizar a Hora do Código com seus alunos no período de 07 a 11 de Novembro de 2016, semana da Hora do Código nas Escolas;</li>
+                <li>Incentivar a participação dos alunos individualmente no período de 5 a 11 de dezembro de 2016 durante a Hora do Código Mundial;</li>
+                <li>Cadastrar sua escola no site: horadocodigo.fundetec.org.br do dia 01/11/2016 a 11/11/2016;</li>
+                <li>Enviar o relatório de atividades de cada turma em formato PDF utilizando as instruções enviadas na confirmação da inscrição para o e-mail: desafiohoc@fundetec.org.br.</li>
+              </ol>
+              <p>Dúvidas, entre em contato através do formulário no hotsite.</p>
+            </div>
             <h3>/* INSCREVA-SE */</h3>
             <hr/>
             <h4>Dados da Escola</h4>
             <label>Escola
-            <input type="text" id="escola_nome" placeholder="Nome da Escola" /></label>
+            <input type="text" id="escola_nome" placeholder="Nome da Escola" disabled /></label>
             <label>INEP
-            <input type="number" id="escola_inep" placeholder="Número do INEP da Escola" /></label>
+            <input type="number" id="escola_inep" placeholder="Número do INEP da Escola" disabled /></label>
             <label>Total de Alunos da Escola
-            <input type="number" id="escola_total" placeholder="Número total de alunos" /></label>
+            <input type="number" id="escola_total" placeholder="Número total de alunos" disabled /></label>
             <label>Cidade
-            <select id="escola_cidade"></select></label>
+            <select id="escola_cidade" disabled></select></label>
             <hr/>
             <h4>Dados do Professor</h4>
             <label>Nome Completo
-            <input type="text" id="professor_nome" placeholder="Nome do Professor" /></label>
+            <input type="text" id="professor_nome" placeholder="Nome do Professor" disabled /></label>
             <label>CPF
-            <input type="text" id="professor_cpf" placeholder="CPF do Professor" /></label>
+            <input type="text" id="professor_cpf" placeholder="CPF do Professor" disabled /></label>
             <label>E-mail
-            <input type="text" id="professor_email" placeholder="E-mail do Professor" /></label>
+            <input type="text" id="professor_email" placeholder="E-mail do Professor" disabled /></label>
             <label>Telefone
-            <input type="text" id="professor_telefone" placeholder="Telefone do Professor" /></label>
+            <input type="text" id="professor_telefone" placeholder="Telefone do Professor" disabled /></label>
             <hr/>
             <h4>Informações sobre as Turmas</h4>
             <label>Informe o Link das turmas cadastradas (1 por linha)
-            <textarea id="turmas_links" placeholder="Informe o link das turmas cadastradas, apenas um por linha." rows="6"></textarea></label>
-            <input type="button" id="botaoInscreva" class="button" value="Enviar" />
+            <textarea id="turmas_links" placeholder="Informe o link das turmas cadastradas, apenas um por linha." rows="6" disabled></textarea></label>
+            <input type="button" id="botaoInscreva" class="button" value="Enviar" disabled />
           </div>
         </div>
         <button class="close-button" data-close aria-label="Close modal" type="button">
