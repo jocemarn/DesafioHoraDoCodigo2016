@@ -156,11 +156,12 @@ header{
       }
     }
   }
-}
-
-header .fundoFixo{
-  box-shadow: 0 0 15px 0 rgba(255,255,255,0.3);
-  background: url('../img/bg.jpg');
+  > div{
+    background: url('../img/bg.jpg');
+  }
+  .fundoFixo{
+    box-shadow: 0 0 15px 0 rgba(255,255,255,0.3);
+  }
 }
 
 section:not(#organizacaoEApoio){

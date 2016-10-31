@@ -2,6 +2,7 @@ $(document).foundation();
 
 marginTop = 90;
 atual = 0;
+const dataFirebase = firebase.database().ref();
 
 function needFundo(){
 	if($(window).scrollTop() < 20){
@@ -51,4 +52,8 @@ $("header nav #menuTrigger").click(function(){
 			$(".itemMenu").addClass("show-for-medium");
 		}
 	}
+});
+
+$("#botaoInscreva").click(function(){
+
 });
