@@ -214,9 +214,9 @@ $("#botaoInscreva").click(function(){
 								}
 							}else{
 								if(typeof total == typeof undefined && attr == false){
-									var dados = "inep="+inep+"&total="+total+"&nome="+nome+"&cpf="+cpf+"&email="+email+="&telefone="+telefone+"&turmas="+turmas;
+									var dados = "inep="+inep+"&total="+total+"&nome="+nome+"&cpf="+cpf+"&email="+email+"&telefone="+telefone+"&turmas="+turmas;
 								}else{
-									var dados = "inep="+inep+"&nome="+nome+"&cpf="+cpf+"&email="+email+="&telefone="+telefone+"&turmas="+turmas;
+									var dados = "inep="+inep+"&nome="+nome+"&cpf="+cpf+"&email="+email+"&telefone="+telefone+"&turmas="+turmas;
 								}
 								$.ajax({
 						      type: "post",
