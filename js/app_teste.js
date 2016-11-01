@@ -19,7 +19,7 @@ $(document).ready(function(){
 
 
 	  $('#professor_cpf').mask('000.000.000-00', {reverse: true});
-		$('#professor_telefone').mask('(00) 90000-0000', {reverse: true});
+		$('#professor_telefone').mask('(00) 90000-0000');
 
 });
 
