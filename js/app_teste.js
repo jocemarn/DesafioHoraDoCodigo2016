@@ -233,6 +233,13 @@ $("#botaoInscreva").click(function(){
 											if($("#sucessoBotao").hasClass("displayNone")){
 												$("#sucessoBotao").removeClass("displayNone");
 											}
+											$("#escola_inep").val('');
+											$("#escola_total").val('');
+											$("#professor_nome").val('');
+											$("#professor_email").val('');
+											$("#professor_telefone").val('');
+											$("#turmas_links").val('');
+											$("#escola_total").attr('disabled');
 										}else{
 											$("#erroBotao p").html(data.motivo);
 											if($("#erroBotao").hasClass("displayNone")){
