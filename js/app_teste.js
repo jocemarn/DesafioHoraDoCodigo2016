@@ -66,7 +66,7 @@ $("#escola_total").focusout(function(){
 			}
 	}
 
-}
+});
 
 $("#escola_inep").focusout(function(){
 
