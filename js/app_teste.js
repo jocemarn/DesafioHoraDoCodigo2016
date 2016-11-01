@@ -170,18 +170,80 @@ $("#botaoInscreva").click(function(){
 		if($("#erroBotao").hasClass("displayNone")){
 			$("#erroBotao").removeClass("displayNone");
 		}
-		var deslocamento = $("#erroEscola").offset().top;
-		$('#inscreva').animate({ scrollTop: deslocamento-marginTop }, 'slow');
 	}else{
-		if(typeof $("#escola_total").val() == typeof undefined && attr == false){
+		var total = $("#escola_total").val();
+		if(typeof total == typeof undefined && attr == false && !total){
 			$("#erroBotao p").html("O campo de Total de Alunos da Escola é obrigatório para essa inscrição. Para continuar, por favor, preencha com o total de alunos matriculados neste momento em sua escola.");
 			if($("#erroBotao").hasClass("displayNone")){
 				$("#erroBotao").removeClass("displayNone");
 			}
-		  var deslocamento = $("#erroEscola").offset().top;
-		  $('#inscreva').animate({ scrollTop: deslocamento-marginTop }, 'slow');
 		}else{
-
+			var nome = $("#professor_nome").val();
+			if(!nome){
+				$("#erroBotao p").html("O campo Nome do(a) Professor(a) é obrigatório. Por favor, preencha-o para que possa continuar.");
+				if($("#erroBotao").hasClass("displayNone")){
+					$("#erroBotao").removeClass("displayNone");
+				}
+			}else{
+				var cpf = $("#professor_cpf").val();
+				if(!cpf){
+					$("#erroBotao p").html("O campo CPF do(a) Professor(a) é obrigatório. Por favor, preencha-o para que possa continuar.");
+					if($("#erroBotao").hasClass("displayNone")){
+						$("#erroBotao").removeClass("displayNone");
+					}
+				}else{
+					var email = $("#professor_email").val();
+					if(!email){
+						$("#erroBotao p").html("O campo e-mail do(a) Professor(a) é obrigatório. Por favor, preencha-o para que possa continuar.");
+						if($("#erroBotao").hasClass("displayNone")){
+							$("#erroBotao").removeClass("displayNone");
+						}
+					}else{
+						var telefone = $("#professor_telefone").val();
+						if(!telefone){
+							$("#erroBotao p").html("O campo Telefone do(a) Professor(a) é obrigatório. Por favor, preencha-o para que possa continuar.");
+							if($("#erroBotao").hasClass("displayNone")){
+								$("#erroBotao").removeClass("displayNone");
+							}
+						}else{
+							var turmas = $("#turmas_links").val();
+							if(!turmas){
+								$("#erroBotao p").html("O campo de links das turmas é obrigatório. Por favor, preencha-o para que possa continuar.");
+								if($("#erroBotao").hasClass("displayNone")){
+									$("#erroBotao").removeClass("displayNone");
+								}
+							}else{
+								if(typeof total == typeof undefined && attr == false){
+									var dados = "inep="+inep+"&total="+total+"&nome="+nome+"&cpf="+cpf+"&email="+email+="&telefone="+telefone+"&turmas="+turmas;
+								}else{
+									var dados = "inep="+inep+"&nome="+nome+"&cpf="+cpf+"&email="+email+="&telefone="+telefone+"&turmas="+turmas;
+								}
+								$.ajax({
+						      type: "post",
+						      url: "http://formulario.fundetec.org.br/hdc/cadastro.php",
+						      data: dados,
+						      dataType: "json",
+						      success: function(data){
+										if(data.sucesso == 1){
+											if(data.motivo){
+												$("#sucessoBotao p").html(data.motivo);
+											}
+											if($("#sucessoBotao").hasClass("displayNone")){
+												$("#sucessoBotao").removeClass("displayNone");
+											}
+										}else{
+											$("#erroBotao p").html(data.motivo);
+											if($("#erroBotao").hasClass("displayNone")){
+												$("#erroBotao").removeClass("displayNone");
+											}
+										}
+									}
+								});
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 });
