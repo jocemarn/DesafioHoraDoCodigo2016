@@ -105,6 +105,32 @@ $("#escola_inep").focusout(function(){
 	}
 });
 
+$("#professor_cpf").focusout(function(){
+
+	$("#erroInscreva p").html();
+	if(!$("#erroInscreva").hasClass("displayNone")){
+		$("#erroInscreva").addClass("displayNone")
+	}
+
+	var cpf = $("#professor_cpf").val();
+	if(cpf){
+		var url = "http://formulario.fundetec.org.br/hdc/pesquisa/cpf.php?cpf="+cpf;
+		$.getJSON(url, function(data){
+			if(data.erro == 1){
+				$("#erroInscreva p").html(data.motivo);
+				if($("#erroInscreva").hasClass("displayNone")){
+					$("#erroInscreva").removeClass("displayNone");
+				}
+			}
+		});
+	}else{
+		$("#erroInscreva p").html("O preenchimento do campo CPF do Professor(a) é obrigatório.");
+		if($("#erroInscreva").hasClass("displayNone")){
+			$("#erroInscreva").removeClass("displayNone");
+		}
+	}
+});
+
 
 $("#botaoInscreva").click(function(){
 
