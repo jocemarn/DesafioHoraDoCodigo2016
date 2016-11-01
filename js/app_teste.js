@@ -216,9 +216,9 @@ $("#botaoInscreva").click(function(){
 								}
 							}else{
 								if($("#escola_needTotal").val() == 1){
-									var dados = "inep="+inep+"&total="+total+"&nome="+nome+"&cpf="+cpf+"&email="+email+"&telefone="+telefone+"&turmas="+turmas;
+									var dados = "escola_inep="+inep+"&escola_total="+total+"&professor_nome="+nome+"&professor_cpf="+cpf+"&professor_email="+email+"&professor_telefone="+telefone+"&turmas_links="+turmas;
 								}else{
-									var dados = "inep="+inep+"&nome="+nome+"&cpf="+cpf+"&email="+email+"&telefone="+telefone+"&turmas="+turmas;
+									var dados = "escola_inep="+inep+"&professor_nome="+nome+"&professor_cpf="+cpf+"&professor_email="+email+"&professor_telefone="+telefone+"&turmas_links="+turmas;
 								}
 								$.ajax({
 						      type: "post",
