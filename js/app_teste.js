@@ -55,7 +55,7 @@ $("header nav #menuTrigger").click(function(){
 
 $("#escola_inep").focusout(function(){
 
-	$("#escola_total").attr("disabled");
+	$("#escola_total").attr("disabled", "disabled");
 	$("#erroInscreva p").html();
 	if(!$("#erroInscreva").hasClass("displayNone")){
 		$("#erroInscreva").addClass("displayNone")
