@@ -55,13 +55,22 @@ $("header nav #menuTrigger").click(function(){
 });
 
 
-$("#escola_inep").change(function(){
+$("#escola_inep").focusout(function(){
 	var inep = $("#escola_inep").val();
 	if(inep){
 		var url = "http://formulario.fundetec.org.br/hdc/pesquisa/inep.php?inep="+inep;
-		$.ajax(
-
-		);
+		$.json(url, function(data){
+			if(data.sucesso == 1){
+				$("#escola_nome").val(data.nomeEscola);
+				$("#escola_cidade").val(data.nomeCidade);
+				if(!data.numeroAlunos){
+					$("#escola_total").removeAttr("disabled");
+				}else{
+					$("#escola_total").val(data.numeroAlunos);
+					$("#escola_total").attr("disabled");
+				}
+			}
+		});
 	}
 });
 
