@@ -2,8 +2,6 @@ $(document).foundation();
 
 marginTop = 90;
 atual = 0;
-const dataFirebase = firebase.database().ref();
-
 function needFundo(){
 	if($(window).scrollTop() < 20){
 		if($('header #fixed').hasClass('fundoFixo')){
