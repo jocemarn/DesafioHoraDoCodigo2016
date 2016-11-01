@@ -164,5 +164,24 @@ $("#professor_email").focusout(function(){
 
 
 $("#botaoInscreva").click(function(){
+	var inep = $("#escola_inep").val();
+	if(!inep){
+		$("#erroEscola p").html("O campo INEP é obrigatório. Por favor, preencha-o para que possa continuar.");
+		if($("#erroEscola").hasClass("displayNone")){
+			$("#erroEscola").removeClass("displayNone");
+		}
+		var deslocamento = $("#erroEscola").offset().top;
+		$('html, body').animate({ scrollTop: deslocamento-marginTop }, 'slow');
+	}else{
+		if(typeof $("#escola_total").val() == typeof undefined && attr == false){
+			$("#erroEscola p").html("O campo de Total de Alunos da Escola é obrigatório para essa inscrição. Para continuar, por favor, preencha com o total de alunos matriculados neste momento em sua escola.");
+			if($("#erroEscola").hasClass("displayNone")){
+				$("#erroEscola").removeClass("displayNone");
+			}
+		  var deslocamento = $("#erroEscola").offset().top;
+		  $('html, body').animate({ scrollTop: deslocamento-marginTop }, 'slow');
+		}else{
 
+		}
+	}
 });
