@@ -72,6 +72,8 @@ $("#escola_inep").focusout(function(){
 
 	$("#escola_total").attr("disabled", "disabled");
 	$("#erroInscreva p").html();
+	$("#escola_nome").val('');
+	$("#escola_cidade").val('');
 	if(!$("#erroInscreva").hasClass("displayNone")){
 		$("#erroInscreva").addClass("displayNone")
 	}
