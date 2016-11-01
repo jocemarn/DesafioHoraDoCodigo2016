@@ -215,40 +215,32 @@ $("#botaoInscreva").click(function(){
 									$("#erroBotao").removeClass("displayNone");
 								}
 							}else{
-								var tipoEscola = $("#escola_tipo").val();
-								if(!tipoEscola){
-									$("#erroBotao p").html("O campo de Tipo Escola é obrigatório. Por favor, preencha-o para que possa continuar.");
-									if($("#erroBotao").hasClass("displayNone")){
-										$("#erroBotao").removeClass("displayNone");
-									}
+								if($("#escola_needTotal").val() == 1){
+									var dados = "escola_inep="+inep+"&escola_total="+total+"&professor_nome="+nome+"&professor_cpf="+cpf+"&professor_email="+email+"&professor_telefone="+telefone+"&turmas_links="+turmas;
 								}else{
-									if($("#escola_needTotal").val() == 1){
-										var dados = "escola_inep="+inep+"&escola_total="+total+"&escola_tipo="+tipoEscola+"&professor_nome="+nome+"&professor_cpf="+cpf+"&professor_email="+email+"&professor_telefone="+telefone+"&turmas_links="+turmas;
-									}else{
-										var dados = "escola_inep="+inep+"&escola_tipo="+tipoEscola+"&professor_nome="+nome+"&professor_cpf="+cpf+"&professor_email="+email+"&professor_telefone="+telefone+"&turmas_links="+turmas;
-									}
-									$.ajax({
-							      type: "post",
-							      url: "http://formulario.fundetec.org.br/hdc/cadastro.php",
-							      data: dados,
-							      dataType: "json",
-							      success: function(data){
-											if(data.sucesso == 1){
-												if(data.motivo){
-													$("#sucessoBotao p").html(data.motivo);
-												}
-												if($("#sucessoBotao").hasClass("displayNone")){
-													$("#sucessoBotao").removeClass("displayNone");
-												}
-											}else{
-												$("#erroBotao p").html(data.motivo);
-												if($("#erroBotao").hasClass("displayNone")){
-													$("#erroBotao").removeClass("displayNone");
-												}
+									var dados = "escola_inep="+inep+"&professor_nome="+nome+"&professor_cpf="+cpf+"&professor_email="+email+"&professor_telefone="+telefone+"&turmas_links="+turmas;
+								}
+								$.ajax({
+						      type: "post",
+						      url: "http://formulario.fundetec.org.br/hdc/cadastro.php",
+						      data: dados,
+						      dataType: "json",
+						      success: function(data){
+										if(data.sucesso == 1){
+											if(data.motivo){
+												$("#sucessoBotao p").html(data.motivo);
+											}
+											if($("#sucessoBotao").hasClass("displayNone")){
+												$("#sucessoBotao").removeClass("displayNone");
+											}
+										}else{
+											$("#erroBotao p").html(data.motivo);
+											if($("#erroBotao").hasClass("displayNone")){
+												$("#erroBotao").removeClass("displayNone");
 											}
 										}
-									});
-								}
+									}
+								});
 							}
 						}
 					}
