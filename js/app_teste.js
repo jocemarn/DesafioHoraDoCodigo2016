@@ -54,7 +54,13 @@ $("header nav #menuTrigger").click(function(){
 
 
 $("#escola_inep").focusout(function(){
+
 	$("#escola_total").attr("disabled");
+	$("#erroInscreva p").html();
+	if(!$("#erroInscreva").hasClass("displayNone")){
+		$("#erroInscreva").addClass("displayNone")
+	}
+
 	var inep = $("#escola_inep").val();
 	if(inep){
 		var url = "http://formulario.fundetec.org.br/hdc/pesquisa/inep.php?inep="+inep;
@@ -66,6 +72,11 @@ $("#escola_inep").focusout(function(){
 					$("#escola_total").removeAttr("disabled");
 				}else{
 					$("#escola_total").val(data.numeroAlunos);
+				}
+			}else{
+				$("#erroInscreva p").html(data.motivo);
+				if($("#erroInscreva").hasClass("displayNone")){
+					$("#erroInscreva").removeClass("displayNone")
 				}
 			}
 		});
