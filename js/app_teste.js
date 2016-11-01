@@ -136,6 +136,32 @@ $("#professor_cpf").focusout(function(){
 	}
 });
 
+$("#professor_email").focusout(function(){
+
+	$("#erroProfessor p").html();
+	if(!$("#erroProfessor").hasClass("displayNone")){
+		$("#erroProfessor").addClass("displayNone")
+	}
+
+	var email = $("#professor_email").val();
+	if(email){
+		var url = "http://formulario.fundetec.org.br/hdc/pesquisa/email.php?email="+email;
+		$.getJSON(url, function(data){
+			if(data.erro == 1){
+				$("#erroProfessor p").html(data.motivo);
+				if($("#erroProfessor").hasClass("displayNone")){
+					$("#erroProfessor").removeClass("displayNone");
+				}
+			}
+		});
+	}else{
+		$("#erroProfessor p").html("O preenchimento do campo e-mail do Professor(a) é obrigatório.");
+		if($("#erroProfessor").hasClass("displayNone")){
+			$("#erroProfessor").removeClass("displayNone");
+		}
+	}
+});
+
 
 $("#botaoInscreva").click(function(){
 
