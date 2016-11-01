@@ -92,8 +92,10 @@ $("#escola_inep").focusout(function(){
 				$("#escola_cidade").val(data.nomeCidade);
 				if(!data.numeroAlunos){
 					$("#escola_total").removeAttr("disabled");
+					$("#escola_needTotal").val(1);
 				}else{
 					$("#escola_total").val(data.numeroAlunos);
+					$("#escola_needTotal").val(0);
 				}
 			}else{
 				$("#erroEscola p").html(data.motivo);
@@ -172,7 +174,7 @@ $("#botaoInscreva").click(function(){
 		}
 	}else{
 		var total = $("#escola_total").val();
-		if(typeof total == typeof undefined && attr == false && !total){
+		if($("#escola_needTotal").val() == 1 && !total){
 			$("#erroBotao p").html("O campo de Total de Alunos da Escola é obrigatório para essa inscrição. Para continuar, por favor, preencha com o total de alunos matriculados neste momento em sua escola.");
 			if($("#erroBotao").hasClass("displayNone")){
 				$("#erroBotao").removeClass("displayNone");
@@ -213,7 +215,7 @@ $("#botaoInscreva").click(function(){
 									$("#erroBotao").removeClass("displayNone");
 								}
 							}else{
-								if(typeof total == typeof undefined && attr == false){
+								if($("#escola_total").val() == 1){
 									var dados = "inep="+inep+"&total="+total+"&nome="+nome+"&cpf="+cpf+"&email="+email+"&telefone="+telefone+"&turmas="+turmas;
 								}else{
 									var dados = "inep="+inep+"&nome="+nome+"&cpf="+cpf+"&email="+email+"&telefone="+telefone+"&turmas="+turmas;
