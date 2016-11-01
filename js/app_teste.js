@@ -53,6 +53,21 @@ $("header nav #menuTrigger").click(function(){
 });
 
 
+$("#escola_total").focusout(function(){
+	$("#erroInscreva p").html();
+	if(!$("#erroInscreva").hasClass("displayNone")){
+		$("#erroInscreva").addClass("displayNone")
+	}
+
+	if($("#escola_total").val() == 0 || !$("#escola_total").val()){
+			$("#erroInscreva p").html("O campo de Total de Alunos da Escola é obrigatório para essa inscrição. Para continuar, por favor, preencha com o total de alunos matriculados neste momento em sua escola.");
+			if($("#erroInscreva").hasClass("displayNone")){
+				$("#erroInscreva").removeClass("displayNone");
+			}
+	}
+
+}
+
 $("#escola_inep").focusout(function(){
 
 	$("#escola_total").attr("disabled", "disabled");
@@ -76,7 +91,7 @@ $("#escola_inep").focusout(function(){
 			}else{
 				$("#erroInscreva p").html(data.motivo);
 				if($("#erroInscreva").hasClass("displayNone")){
-					$("#erroInscreva").removeClass("displayNone")
+					$("#erroInscreva").removeClass("displayNone");
 				}
 			}
 		});
