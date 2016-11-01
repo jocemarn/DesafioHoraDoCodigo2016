@@ -171,7 +171,7 @@ $("#botaoInscreva").click(function(){
 			$("#erroEscola").removeClass("displayNone");
 		}
 		var deslocamento = $("#erroEscola").offset().top;
-		$('html, body').animate({ scrollTop: deslocamento-marginTop }, 'slow');
+		$('#inscreva').animate({ scrollTop: deslocamento-marginTop }, 'slow');
 	}else{
 		if(typeof $("#escola_total").val() == typeof undefined && attr == false){
 			$("#erroEscola p").html("O campo de Total de Alunos da Escola é obrigatório para essa inscrição. Para continuar, por favor, preencha com o total de alunos matriculados neste momento em sua escola.");
@@ -179,7 +179,7 @@ $("#botaoInscreva").click(function(){
 				$("#erroEscola").removeClass("displayNone");
 			}
 		  var deslocamento = $("#erroEscola").offset().top;
-		  $('html, body').animate({ scrollTop: deslocamento-marginTop }, 'slow');
+		  $('#inscreva').animate({ scrollTop: deslocamento-marginTop }, 'slow');
 		}else{
 
 		}
