@@ -97,6 +97,11 @@ $("#escola_inep").focusout(function(){
 				}
 			}
 		});
+	}else{
+		$("#erroInscreva p").html("O preenchimento do campo INEP é obrigatório.");
+		if($("#erroInscreva").hasClass("displayNone")){
+			$("#erroInscreva").removeClass("displayNone");
+		}
 	}
 });
 
