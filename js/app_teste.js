@@ -71,11 +71,11 @@ $("#escola_total").focusout(function(){
 $("#escola_inep").focusout(function(){
 
 	$("#escola_total").attr("disabled", "disabled");
-	$("#erroInscreva p").html();
+	$("#erroEscola p").html();
 	$("#escola_nome").val('');
 	$("#escola_cidade").val('');
-	if(!$("#erroInscreva").hasClass("displayNone")){
-		$("#erroInscreva").addClass("displayNone")
+	if(!$("#erroEscola").hasClass("displayNone")){
+		$("#erroEscola").addClass("displayNone")
 	}
 
 	var inep = $("#escola_inep").val();
@@ -91,25 +91,25 @@ $("#escola_inep").focusout(function(){
 					$("#escola_total").val(data.numeroAlunos);
 				}
 			}else{
-				$("#erroInscreva p").html(data.motivo);
-				if($("#erroInscreva").hasClass("displayNone")){
-					$("#erroInscreva").removeClass("displayNone");
+				$("#erroEscola p").html(data.motivo);
+				if($("#erroEscola").hasClass("displayNone")){
+					$("#erroEscola").removeClass("displayNone");
 				}
 			}
 		});
 	}else{
-		$("#erroInscreva p").html("O preenchimento do campo INEP é obrigatório.");
-		if($("#erroInscreva").hasClass("displayNone")){
-			$("#erroInscreva").removeClass("displayNone");
+		$("#erroEscola p").html("O preenchimento do campo INEP é obrigatório.");
+		if($("#erroEscola").hasClass("displayNone")){
+			$("#erroEscola").removeClass("displayNone");
 		}
 	}
 });
 
 $("#professor_cpf").focusout(function(){
 
-	$("#erroInscreva p").html();
-	if(!$("#erroInscreva").hasClass("displayNone")){
-		$("#erroInscreva").addClass("displayNone")
+	$("#erroProfessor p").html();
+	if(!$("#erroProfessor").hasClass("displayNone")){
+		$("#erroProfessor").addClass("displayNone")
 	}
 
 	var cpf = $("#professor_cpf").val();
@@ -117,16 +117,16 @@ $("#professor_cpf").focusout(function(){
 		var url = "http://formulario.fundetec.org.br/hdc/pesquisa/cpf.php?cpf="+cpf;
 		$.getJSON(url, function(data){
 			if(data.erro == 1){
-				$("#erroInscreva p").html(data.motivo);
-				if($("#erroInscreva").hasClass("displayNone")){
-					$("#erroInscreva").removeClass("displayNone");
+				$("#erroProfessor p").html(data.motivo);
+				if($("#erroProfessor").hasClass("displayNone")){
+					$("#erroProfessor").removeClass("displayNone");
 				}
 			}
 		});
 	}else{
-		$("#erroInscreva p").html("O preenchimento do campo CPF do Professor(a) é obrigatório.");
-		if($("#erroInscreva").hasClass("displayNone")){
-			$("#erroInscreva").removeClass("displayNone");
+		$("#erroProfessor p").html("O preenchimento do campo CPF do Professor(a) é obrigatório.");
+		if($("#erroProfessor").hasClass("displayNone")){
+			$("#erroProfessor").removeClass("displayNone");
 		}
 	}
 });
