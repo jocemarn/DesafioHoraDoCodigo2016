@@ -215,7 +215,7 @@ $("#botaoInscreva").click(function(){
 									$("#erroBotao").removeClass("displayNone");
 								}
 							}else{
-								if($("#escola_total").val() == 1){
+								if($("#escola_needTotal").val() == 1){
 									var dados = "inep="+inep+"&total="+total+"&nome="+nome+"&cpf="+cpf+"&email="+email+"&telefone="+telefone+"&turmas="+turmas;
 								}else{
 									var dados = "inep="+inep+"&nome="+nome+"&cpf="+cpf+"&email="+email+"&telefone="+telefone+"&turmas="+turmas;
