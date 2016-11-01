@@ -57,7 +57,7 @@ $("#escola_inep").focusout(function(){
 	var inep = $("#escola_inep").val();
 	if(inep){
 		var url = "http://formulario.fundetec.org.br/hdc/pesquisa/inep.php?inep="+inep;
-		$.json(url, function(data){
+		$.getJSON(url, function(data){
 			if(data.sucesso == 1){
 				$("#escola_nome").val(data.nomeEscola);
 				$("#escola_cidade").val(data.nomeCidade);
