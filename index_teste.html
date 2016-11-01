@@ -273,11 +273,11 @@
           <div class="medium-48">
             <h3>/* INSCREVA-SE */</h3>
             <hr/>
-            <div class="callout alert displayNone" id="erroInscreva">
+            <h4>Dados da Escola</h4>
+            <div class="callout alert displayNone" id="erroEscola">
               <h5>ERRO!</h5>
               <p></p>
             </div>
-            <h4>Dados da Escola</h4>
             <label>Escola
             <input type="text" id="escola_nome" placeholder="Nome da Escola" disabled /></label>
             <label>INEP
@@ -288,6 +288,10 @@
             <input type="text" id="escola_cidade" placeholder="Cidade da Escola" disabled/></label>
             <hr/>
             <h4>Dados do Professor</h4>
+            <div class="callout alert displayNone" id="erroProfessor">
+              <h5>ERRO!</h5>
+              <p></p>
+            </div>
             <label>Nome Completo
             <input type="text" id="professor_nome" placeholder="Nome do Professor" /></label>
             <label>CPF
@@ -298,6 +302,10 @@
             <input type="text" id="professor_telefone" placeholder="Telefone do Professor" /></label>
             <hr/>
             <h4>Informações sobre as Turmas</h4>
+            <div class="callout alert displayNone" id="erroTurmas">
+              <h5>ERRO!</h5>
+              <p></p>
+            </div>
             <label>Informe o Link das turmas cadastradas (1 por linha)
             <textarea id="turmas_links" placeholder="Informe o link das turmas cadastradas, apenas um por linha." rows="6"></textarea></label>
             <input type="button" id="botaoInscreva" class="button" value="Enviar" disabled />
