@@ -215,39 +215,46 @@ $("#botaoInscreva").click(function(){
 									$("#erroBotao").removeClass("displayNone");
 								}
 							}else{
-								if($("#escola_needTotal").val() == 1){
-									var dados = "escola_inep="+inep+"&escola_total="+total+"&professor_nome="+nome+"&professor_cpf="+cpf+"&professor_email="+email+"&professor_telefone="+telefone+"&turmas_links="+turmas;
+								if(!confirm("Você confirma ter seguido os passos informados no início desse formulário?")){
+									$("#erroBotao p").html("Antes de se inscrever, siga os passos informados no início desse formulário! :)");
+									if($("#erroBotao").hasClass("displayNone")){
+										$("#erroBotao").removeClass("displayNone");
+									}
 								}else{
-									var dados = "escola_inep="+inep+"&professor_nome="+nome+"&professor_cpf="+cpf+"&professor_email="+email+"&professor_telefone="+telefone+"&turmas_links="+turmas;
-								}
-								$.ajax({
-						      type: "post",
-						      url: "http://formulario.fundetec.org.br/hdc/cadastro.php",
-						      data: dados,
-						      dataType: "json",
-						      success: function(data){
-										if(data.sucesso == 1){
-											if(data.motivo){
-												$("#sucessoBotao p").html(data.motivo);
-											}
-											if($("#sucessoBotao").hasClass("displayNone")){
-												$("#sucessoBotao").removeClass("displayNone");
-											}
-											$("#escola_inep").val('');
-											$("#escola_total").val('');
-											$("#professor_nome").val('');
-											$("#professor_email").val('');
-											$("#professor_telefone").val('');
-											$("#turmas_links").val('');
-											$("#escola_total").attr('disabled');
-										}else{
-											$("#erroBotao p").html(data.motivo);
-											if($("#erroBotao").hasClass("displayNone")){
-												$("#erroBotao").removeClass("displayNone");
+									if($("#escola_needTotal").val() == 1){
+										var dados = "escola_inep="+inep+"&escola_total="+total+"&professor_nome="+nome+"&professor_cpf="+cpf+"&professor_email="+email+"&professor_telefone="+telefone+"&turmas_links="+turmas;
+									}else{
+										var dados = "escola_inep="+inep+"&professor_nome="+nome+"&professor_cpf="+cpf+"&professor_email="+email+"&professor_telefone="+telefone+"&turmas_links="+turmas;
+									}
+									$.ajax({
+							      type: "post",
+							      url: "http://formulario.fundetec.org.br/hdc/cadastro.php",
+							      data: dados,
+							      dataType: "json",
+							      success: function(data){
+											if(data.sucesso == 1){
+												if(data.motivo){
+													$("#sucessoBotao p").html(data.motivo);
+												}
+												if($("#sucessoBotao").hasClass("displayNone")){
+													$("#sucessoBotao").removeClass("displayNone");
+												}
+												$("#escola_inep").val('');
+												$("#escola_total").val('');
+												$("#professor_nome").val('');
+												$("#professor_email").val('');
+												$("#professor_telefone").val('');
+												$("#turmas_links").val('');
+												$("#escola_total").attr('disabled');
+											}else{
+												$("#erroBotao p").html(data.motivo);
+												if($("#erroBotao").hasClass("displayNone")){
+													$("#erroBotao").removeClass("displayNone");
+												}
 											}
 										}
-									}
-								});
+									});
+								}
 							}
 						}
 					}
