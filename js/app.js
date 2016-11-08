@@ -166,6 +166,14 @@ $("#professor_email").focusout(function(){
 
 
 $("#botaoInscreva").click(function(){
+
+	if(!$("#erroBotao").hasClass("displayNone")){
+		$("#erroBotao").addClass("displayNone");
+	}
+	if(!$("#sucessoBotao").hasClass("displayNone")){
+		$("#sucessoBotao").addClass("displayNone");
+	}
+
 	var inep = $("#escola_inep").val();
 	if(!inep){
 		$("#erroBotao p").html("O campo INEP é obrigatório. Por favor, preencha-o para que possa continuar.");
