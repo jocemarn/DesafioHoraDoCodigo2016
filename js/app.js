@@ -120,8 +120,9 @@ $("#professor_cpf").focusout(function(){
 	}
 
 	var cpf = $("#professor_cpf").val();
+	var inep = $("#escola_inep").val();
 	if(cpf){
-		var url = "http://formulario.fundetec.org.br/hdc/pesquisa/cpf.php?cpf="+cpf;
+		var url = "http://formulario.fundetec.org.br/hdc/pesquisa/cpf.php?cpf="+cpf+"&inep="+inep;
 		$.getJSON(url, function(data){
 			if(data.erro == 1){
 				$("#erroProfessor p").html(data.motivo);
