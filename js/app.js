@@ -231,7 +231,7 @@ $("#botaoInscreva").click(function(){
 									}
 								}else{
 									if($("#escola_needTotal").val() == 1 && total < 150){
-										var numeroAlunosOk = confirm("Você tem certeza de que sua escola tem "+total+" de alunos matriculados em todas as turmas? Esse número é o número de alunos matrículados na escola e não nas turmas do Code.org!");
+										var numeroAlunosOk = confirm("Você tem certeza de que sua escola tem "+total+" alunos matriculados em todas as turmas? Esse número é o número de alunos matrículados na escola e não nas turmas do Code.org!");
 									}else{
 										var numeroAlunosOk = true;
 									}
