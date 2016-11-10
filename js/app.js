@@ -230,39 +230,51 @@ $("#botaoInscreva").click(function(){
 										$("#erroBotao").removeClass("displayNone");
 									}
 								}else{
-									if($("#escola_needTotal").val() == 1){
-										var dados = "escola_inep="+inep+"&escola_total="+total+"&professor_nome="+nome+"&professor_cpf="+cpf+"&professor_email="+email+"&professor_telefone="+telefone+"&turmas_links="+turmas;
+									if($("#escola_needTotal").val() == 1 && total < 150){
+										var numeroAlunosOk = confirm("Você tem certeza de que sua escola tem "+total+" de alunos matriculados em todas as turmas? Esse número é o número de alunos matrículados na escola e não nas turmas do Code.org!");
 									}else{
-										var dados = "escola_inep="+inep+"&professor_nome="+nome+"&professor_cpf="+cpf+"&professor_email="+email+"&professor_telefone="+telefone+"&turmas_links="+turmas;
+										var numeroAlunosOk = true;
 									}
-									$.ajax({
-							      type: "post",
-							      url: "http://formulario.fundetec.org.br/hdc/cadastro.php",
-							      data: dados,
-							      dataType: "json",
-							      success: function(data){
-											if(data.sucesso == 1){
-												if(data.motivo){
-													$("#sucessoBotao p").html(data.motivo);
-												}
-												if($("#sucessoBotao").hasClass("displayNone")){
-													$("#sucessoBotao").removeClass("displayNone");
-												}
-												$("#escola_inep").val('');
-												$("#escola_total").val('');
-												$("#professor_nome").val('');
-												$("#professor_email").val('');
-												$("#professor_telefone").val('');
-												$("#turmas_links").val('');
-												$("#escola_total").attr('disabled');
-											}else{
-												$("#erroBotao p").html(data.motivo);
-												if($("#erroBotao").hasClass("displayNone")){
-													$("#erroBotao").removeClass("displayNone");
+									if(numeroAlunosOk){
+										if($("#escola_needTotal").val() == 1){
+											var dados = "escola_inep="+inep+"&escola_total="+total+"&professor_nome="+nome+"&professor_cpf="+cpf+"&professor_email="+email+"&professor_telefone="+telefone+"&turmas_links="+turmas;
+										}else{
+											var dados = "escola_inep="+inep+"&professor_nome="+nome+"&professor_cpf="+cpf+"&professor_email="+email+"&professor_telefone="+telefone+"&turmas_links="+turmas;
+										}
+										$.ajax({
+								      type: "post",
+								      url: "http://formulario.fundetec.org.br/hdc/cadastro.php",
+								      data: dados,
+								      dataType: "json",
+								      success: function(data){
+												if(data.sucesso == 1){
+													if(data.motivo){
+														$("#sucessoBotao p").html(data.motivo);
+													}
+													if($("#sucessoBotao").hasClass("displayNone")){
+														$("#sucessoBotao").removeClass("displayNone");
+													}
+													$("#escola_inep").val('');
+													$("#escola_total").val('');
+													$("#professor_nome").val('');
+													$("#professor_email").val('');
+													$("#professor_telefone").val('');
+													$("#turmas_links").val('');
+													$("#escola_total").attr('disabled');
+												}else{
+													$("#erroBotao p").html(data.motivo);
+													if($("#erroBotao").hasClass("displayNone")){
+														$("#erroBotao").removeClass("displayNone");
+													}
 												}
 											}
+										});
+									}else{
+										$("#erroBotao p").html("O número de alunos que estamos solicitando é o número <b>TOTAL DE ALUNOS MATRÍCULADOS na escola</b>. Ou seja, o total de matrículas da escola. Por favor, confira essa informação e tente fazer a sua inscrição novamente.");
+										if($("#erroBotao").hasClass("displayNone")){
+											$("#erroBotao").removeClass("displayNone");
 										}
-									});
+									}
 								}
 							}
 						}
